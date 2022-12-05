@@ -7,7 +7,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:AM-CDM="https://github.com/kaggour/AM-CDM#">
     <owl:Ontology rdf:about="https://github.com/kaggour/AM-CDM">
         <owl:versionIRI rdf:resource="http://github.com/kaggour/AM-CDM/0.1"/>
         <obo:IAO_0000115>A limited implementation of the AM-CDM to demonstrate its compatibility with Deep Lynx</obo:IAO_0000115>
@@ -146,6 +147,17 @@
     <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#process_profile -->
+
+    <owl:AnnotationProperty rdf:about="https://github.com/kaggour/AM-CDM#process_profile">
+        <obo:IAO_0000115>Description of the process of manufacturing a part</obo:IAO_0000115>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label xml:lang="en">process_profile</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/profile_property"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -577,6 +589,14 @@
     
 
 
+    <!-- https://github.com/kaggour/AM-CDM#access -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#access">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000413"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://github.com/kaggour/AM-CDM#addressLine1 -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#addressLine1">
@@ -617,6 +637,14 @@
     
 
 
+    <!-- https://github.com/kaggour/AM-CDM#controlInstrumentType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#controlInstrumentType">
+        <rdfs:subPropertyOf rdf:resource="nuclear:001009"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://github.com/kaggour/AM-CDM#countryAlpha2Code -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#countryAlpha2Code">
@@ -645,6 +673,103 @@
 
     <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#countryName">
         <rdfs:subPropertyOf rdf:resource="nuclear:000468"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetAccessControl -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetAccessControl">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/kaggour/AM-CDM#access"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Public</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Restricted</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetCreationDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetCreationDateTime">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000411"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetFormat -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetFormat">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/kaggour/AM-CDM#format"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetID -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetID">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000477"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetName -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetName">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000468"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetQuantityType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetQuantityType">
+        <rdfs:subPropertyOf rdf:resource="nuclear:001009"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetSchemaURI -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetSchemaURI">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/kaggour/AM-CDM#uri"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetSubject -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetSubject">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000960"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetType">
+        <rdfs:subPropertyOf rdf:resource="nuclear:001009"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#datasetURI -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#datasetURI">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/kaggour/AM-CDM#uri"/>
     </owl:DatatypeProperty>
     
 
@@ -692,6 +817,14 @@
         <rdfs:subPropertyOf rdf:resource="https://github.com/kaggour/AM-CDM#uri"/>
         <dc:creator>Kareem Aggour</dc:creator>
         <rdfs:label>documentURI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#format -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#format">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000413"/>
     </owl:DatatypeProperty>
     
 
@@ -836,10 +969,58 @@
     
 
 
+    <!-- https://github.com/kaggour/AM-CDM#postProcessType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#postProcessType">
+        <rdfs:subPropertyOf rdf:resource="nuclear:001009"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://github.com/kaggour/AM-CDM#postalCode -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#postalCode">
         <rdfs:subPropertyOf rdf:resource="nuclear:000413"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#processEndTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#processEndTime">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000411"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#processID -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#processID">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000477"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#processMonitoringDataType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#processMonitoringDataType">
+        <rdfs:subPropertyOf rdf:resource="nuclear:001009"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#processParameterID -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#processParameterID">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000477"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#processStartTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#processStartTime">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000411"/>
     </owl:DatatypeProperty>
     
 
@@ -886,6 +1067,14 @@
 
     <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#rawDataTime">
         <rdfs:subPropertyOf rdf:resource="nuclear:000411"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#sequenceNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kaggour/AM-CDM#sequenceNumber">
+        <rdfs:subPropertyOf rdf:resource="nuclear:000906"/>
     </owl:DatatypeProperty>
     
 
@@ -9711,6 +9900,18 @@ WB diferentiates this dose as the SDE across the whole body</obo:IAO_0000115>
     
 
 
+    <!-- https://github.com/kaggour/AM-CDM#BuildPlatformPreparation -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#BuildPlatformPreparation">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#PreProcess"/>
+        <obo:IAO_0000115>Description of how the build platform was prepared before the AM process (ex. new or recycled).</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>BuildPlatformPreparation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://github.com/kaggour/AM-CDM#Country -->
 
     <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#Country">
@@ -9747,6 +9948,106 @@ WB diferentiates this dose as the SDE across the whole body</obo:IAO_0000115>
         <obo:profile rdf:resource="http://purl.obolibrary.org/obo/base_profile"/>
         <dc:creator>Kareem Aggour</dc:creator>
         <rdfs:label>Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#DatasetMetadata -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#DatasetMetadata">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000184"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Tag"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000220"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000295"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetAccessControl"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetCreationDateTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetFormat"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetQuantityType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetSchemaURI"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetSubject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#datasetURI"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Data that describes a dataset</obo:IAO_0000115>
+        <obo:profile rdf:resource="http://purl.obolibrary.org/obo/base_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>DatasetMetadata</rdfs:label>
     </owl:Class>
     
 
@@ -9794,6 +10095,121 @@ WB diferentiates this dose as the SDE across the whole body</obo:IAO_0000115>
         <obo:profile rdf:resource="http://purl.obolibrary.org/obo/base_profile"/>
         <dc:creator>Kareem Aggour</dc:creator>
         <rdfs:label>Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#HeatTreatment -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#HeatTreatment">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#PostProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#HeatTreatmentProcessParameters"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Heat treatment process.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>HeatTreatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#HeatTreatmentProcessParameters -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#HeatTreatmentProcessParameters">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#ProcessParameters"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#controlInstrumentType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Nominal process parameters used during heat treatment.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>HeatTreatmentProcessParameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#HotIsostaticPressing -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#HotIsostaticPressing">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#PostProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#HotIsostaticPressingProcessParameters"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Hot isostatic processing, which applies heat and pressure simultaneously to objects in an autoclave via an inert gas in such a way as to eliminate internal voids and obtain desired properties.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>HotIsostaticPressing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#HotIsostaticPressingProcessParameters -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#HotIsostaticPressingProcessParameters">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#ProcessParameters"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Nominal process parameters used during hot isostatic pressing (HIP).</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:comment>Missing Material edge to avoid defining that whole cluster, for now</rdfs:comment>
+        <rdfs:label>HotIsostaticPressingProcessParameters</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#HotIsostaticPressingProcessParameters"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Measurement"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>vesselPressure or vesselTemperature</obo:IAO_0000118>
+    </owl:Axiom>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#MachinePreparation -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#MachinePreparation">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#PreProcess"/>
+        <obo:IAO_0000115>Operations to prepare an AM machine before a build starts, e.g., cleaning, pre-warming.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>MachinePreparation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#MaterialPreparation -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#MaterialPreparation">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#PreProcess"/>
+        <obo:IAO_0000115>Sifting/blending material preparation.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>MaterialPreparation</rdfs:label>
     </owl:Class>
     
 
@@ -10002,6 +10418,299 @@ WB diferentiates this dose as the SDE across the whole body</obo:IAO_0000115>
     
 
 
+    <!-- https://github.com/kaggour/AM-CDM#PostProcess -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#PostProcess">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#postProcessType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Note: The scope of post-processes is broad, which could include assembly as necessary for a part test/certification.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>PostProcess</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#PreProcess -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#PreProcess">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <obo:IAO_0000115>Pre-processing steps.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>PreProcess</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#Process -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#Process">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <obo:IAO_0000115>An occurent.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#ProcessData -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#ProcessData">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#DatasetMetadata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Document"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000220"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#processMonitoringDataType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The direct/derived output that is obtained from the AM system and in-situ monitoring system during a process. Note: the sensing data should be synchronized with the machine data and build progress (enabling temporal/spatial alignment).</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>ProcessData</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessData"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#DatasetMetadata"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>processDataMetadata</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessData"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Document"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>logFile</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessData"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000220"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Measurement"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>samplingRate</obo:IAO_0000118>
+    </owl:Axiom>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#ProcessHistory -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#ProcessHistory">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>All stages of manufacturing processes of a part.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>ProcessHistory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#ProcessParameters -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#ProcessParameters">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#processParameterID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Process parameters used for build.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:label>ProcessParameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#ProcessStep -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#ProcessStep">
+        <rdfs:subClassOf rdf:resource="https://github.com/kaggour/AM-CDM#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000137"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000137"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#ProcessData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#ProcessParameters"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000220"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Document"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:001072"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Document"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#processEndTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#processID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#processStartTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/kaggour/AM-CDM#sequenceNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Event performed as part of a sequence.  May include pre-processing, build, post-processing, and (destructive or non-destructuve) test, inspection, and/or characterization operations.</obo:IAO_0000115>
+        <obo:profile rdf:resource="https://github.com/kaggour/AM-CDM#process_profile"/>
+        <dc:creator>Kareem Aggour</dc:creator>
+        <rdfs:comment>Missing System edge to avoid defining that whole cluster, for now</rdfs:comment>
+        <rdfs:label>ProcessStep</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000137"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Organization"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>agentOrganization</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000137"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Person"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>agentPersonnel</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#ProcessData"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>processData</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000217"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#ProcessParameters"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>processParameters</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000220"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Document"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>processControlPlan</obo:IAO_0000118>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://github.com/kaggour/AM-CDM#ProcessStep"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:001072"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/kaggour/AM-CDM#Document"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <obo:IAO_0000118>processStandard</obo:IAO_0000118>
+    </owl:Axiom>
+    
+
+
     <!-- https://github.com/kaggour/AM-CDM#Qualification -->
 
     <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#Qualification">
@@ -10062,6 +10771,23 @@ WB diferentiates this dose as the SDE across the whole body</obo:IAO_0000115>
         <obo:profile rdf:resource="http://purl.obolibrary.org/obo/base_profile"/>
         <dc:creator>Kareem Aggour</dc:creator>
         <rdfs:label>RawDataValues</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kaggour/AM-CDM#Tag -->
+
+    <owl:Class rdf:about="https://github.com/kaggour/AM-CDM#Tag">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="nuclear:000961"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A multi-use tag node</obo:IAO_0000115>
+        <dc:creator>Brennan Harris</dc:creator>
+        <rdfs:label>Tag</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
